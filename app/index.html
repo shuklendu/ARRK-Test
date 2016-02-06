@@ -1,0 +1,351 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>ARRK Test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    
+  </head>
+  <body ng-app="arkApp">
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    
+    <div class="container" ng-controller="MainCtrl">
+      <div class="content-wrapper">
+        <header class="header">
+          <div class="row app-brand-row text-center">
+            <div class="col-xs-12 col-md-2">
+              <div class="app-trans-search">
+                <form class="navbar-form">
+                  <div class="input-group">
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-2">
+              <a href="#" class="city"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> New York</a>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <a href="../" class="navbar-brand"><img alt="wayflaring" src="images/wayflaring-logo.gif"></a>
+            </div>
+            <div class="col-xs-12 col-md-2 dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Victor Erixon <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-2">
+              <a href="#"><span class="sr-only">Log out</span> <span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+            </div>
+          </div>
+        </header>
+
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsible-menu" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+            </div>
+            <div class="collapse navbar-collapse" id="collapsible-menu">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a href="#">
+                    <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+                    <span class="glyphicon-class">Explore</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    <span class="badge">4</span>
+                    <span class="glyphicon-class">Messages</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    <span class="glyphicon-class">Plans</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                    <span class="glyphicon-class">Friends</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                    <span class="glyphicon-class">Pictures</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                    <span class="glyphicon-class">Pictures</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                    <span class="glyphicon-class">Pictures</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                    <span class="glyphicon-class">Pictures</span>
+                  </a>
+                </li>
+                <li ng-class="{active:isActivityOpen}">
+                  <a href="#" ng-click="isActivityOpen=!isActivityOpen">
+                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                    <span class="glyphicon-class">Activity</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="row main-content-wrapper">
+          <div ng-class="{'col-md-9': isActivityOpen, 'col-md-12': !isActivityOpen}" class="col-xs-12 content-column">
+            <div class="row">
+              <div class="col-md-12">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                      <img src="images/carousal-img1.jpg" alt="...">
+                      <div class="carousel-caption">
+                        <h2>New york</h2>
+                        <p><span class="longitudes">40.6700</span> N, <span class="longitudes">40.6700</span> W</p>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <img src="images/carousal-img1.jpg" alt="...">
+                      <div class="carousel-caption">
+                        <h2>London</h2>
+                        <p><span class="longitudes">40.6700</span> N, <span class="longitudes">40.6700</span> W</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Controls -->
+                  <div class="carousel-control-wrapper">
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- Carousel Ends -->
+            <div class="row content-blocks-wrapper">
+              <div class="col-md-6">
+                <div class="col-md-12 content-block">
+                  <div class="thumbnail">
+                    <img src="images/content-img.jpg" alt="Image Text" class="img-responsive">
+                  </div>
+                  <div class="row user-details">
+                    <div class="col-xs-4">
+                      <div class="user-img">
+                        <img src="images/user-img.jpg" alt="Image Text" class="img-responsive img-circle">
+                      </div>
+                    </div>
+                    <div class="col-xs-8">
+                      <div class="row">
+                        <div class="col-xs-12 user-name">Jacob Clinz Hubertus</div>
+                        <div class="col-xs-6 time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Today</div>
+                        <div class="col-xs-6 location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> The Bay</div>
+                      </div>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget lacinia tortor, vel dapibus leo. Fusce eleifend, leo nec ultricies eleifend.</p>
+                  <div class="post-actions">
+                    <div class="row">
+                      <div class="col-xs-2">
+                        <button type="button" class="btn btn-link"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 26</button>
+                      </div>
+                      <div class="col-xs-2">
+                        <button type="button" class="btn btn-link"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 26</button>
+                      </div>
+                      <div class="col-xs-8">
+                        <button type="button" class="btn btn-link pull-right"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> Vacation</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="col-md-12 content-block">
+                  <div class="thumbnail">
+                    <img src="images/content-img.jpg" alt="Image Text" class="img-responsive">
+                  </div>
+                  <div class="row user-details">
+                    <div class="col-xs-4">
+                      <div class="user-img">
+                        <img src="images/user-img.jpg" alt="Image Text" class="img-responsive img-circle">
+                      </div>
+                    </div>
+                    <div class="col-xs-8">
+                      <div class="row">
+                        <div class="col-xs-12 user-name">Jacob Clinz Hubertus</div>
+                        <div class="col-xs-6 time"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Today</div>
+                        <div class="col-xs-6 location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> The Bay</div>
+                      </div>
+                    </div>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget lacinia tortor, vel dapibus leo. Fusce eleifend, leo nec ultricies eleifend.</p>
+                  <div class="post-actions">
+                    <div class="row">
+                      <div class="col-xs-2">
+                        <button type="button" class="btn btn-link"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 26</button>
+                      </div>
+                      <div class="col-xs-2">
+                        <button type="button" class="btn btn-link"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 26</button>
+                      </div>
+                      <div class="col-xs-8">
+                        <button type="button" class="btn btn-link pull-right"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> Vacation</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-3 col-xs-12" ng-show="isActivityOpen">
+            <div class="activity-column">
+              <h3>Online</h3>
+              <ul class="media-list">
+                <li class="media active">
+                  <div class="media-left">
+                    <a href="#">
+                      <img src="images/user-img-sm.jpg" alt="Image Text" class="img-circle">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Alicia Agneson</h4>
+                    Atlanta
+                    <span class="glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
+                  </div>
+                </li>
+                <li class="media idle">
+                  <div class="media-left">
+                    <a href="#">
+                      <img src="images/user-img-sm.jpg" alt="Image Text" class="img-circle">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Alicia Agneson</h4>
+                    Atlanta
+                    <span class="glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
+                  </div>
+                </li>
+              </ul>
+              <h3>Offline</h3>
+              <ul class="media-list">
+                <li class="media offline">
+                  <div class="media-left">
+                    <a href="#">
+                      <img src="images/user-img-sm.jpg" alt="Image Text" class="img-circle">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Alicia Agneson</h4>
+                    Atlanta
+                    <span class="glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
+                  </div>
+                </li>
+                <li class="media offline">
+                  <div class="media-left">
+                    <a href="#">
+                      <img src="images/user-img-sm.jpg" alt="Image Text" class="img-circle">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Alicia Agneson</h4>
+                    Atlanta
+                    <span class="glyphicon glyphicon-user pull-right" aria-hidden="true"></span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    
+    <!-- build:js(.) scripts/plugins.js -->
+    <script src="/bower_components/bootstrap/js/affix.js"></script>
+    <script src="/bower_components/bootstrap/js/alert.js"></script>
+    <script src="/bower_components/bootstrap/js/dropdown.js"></script>
+    <script src="/bower_components/bootstrap/js/tooltip.js"></script>
+    <script src="/bower_components/bootstrap/js/modal.js"></script>
+    <script src="/bower_components/bootstrap/js/transition.js"></script>
+    <script src="/bower_components/bootstrap/js/button.js"></script>
+    <script src="/bower_components/bootstrap/js/popover.js"></script>
+    <script src="/bower_components/bootstrap/js/carousel.js"></script>
+    <script src="/bower_components/bootstrap/js/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap/js/collapse.js"></script>
+    <script src="/bower_components/bootstrap/js/tab.js"></script>
+    <!-- endbuild -->
+    
+
+    <!-- build:js(.tmp) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/maincontroller.js"></script>
+    <!-- endbuild -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+  </body>
+</html>

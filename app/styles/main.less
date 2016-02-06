@@ -1,0 +1,173 @@
+/* Includes */
+@import "fonts.less";
+/* variables */
+@oceanGreen: #38a6a6;
+@navBarBg: #2c353a;
+@activityColBg: #edf1f2;
+@greyDark: #67737a;
+@badgeBg: #e17950;
+@greyMedium: #7b868c;
+@greyLight: #a5b1b8;
+@greyLightest: #a5b1b8;
+@appTopRowMinHeight: 76px;
+@navBarMinHeight: 90px;
+@userActiveColor: #94ba52;
+@userIdleColor: #f5b041;
+@userOfflineColor: #bfcacd;
+
+/* mixins */
+.mixin-set-color(@color: white){
+  color: @color;
+}
+.row-table {
+  display: table; table-layout: fixed;
+}
+.column-vertical-center {
+  display:table-cell; vertical-align:middle; text-align:center; float: none;
+}
+.border-radius (@radius) {
+  border-radius: @radius;
+}
+/* Space out the masthead */
+body {
+  font-family: 'source_sans_proregular';
+  color: @greyMedium;
+  background: -moz-linear-gradient(135deg, rgba(236,224,209,1) 0%, rgba(236,224,209,1) 1%, rgba(63,93,108,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(63,93,108,1)), color-stop(99%, rgba(236,224,209,1)), color-stop(100%, rgba(236,224,209,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(135deg, rgba(236,224,209,1) 0%, rgba(236,224,209,1) 1%, rgba(63,93,108,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(135deg, rgba(236,224,209,1) 0%, rgba(236,224,209,1) 1%, rgba(63,93,108,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(135deg, rgba(236,224,209,1) 0%, rgba(236,224,209,1) 1%, rgba(63,93,108,1) 100%); /* ie10+ */
+  background: linear-gradient(315deg, rgba(236,224,209,1) 0%, rgba(236,224,209,1) 1%, rgba(63,93,108,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f5d6c', endColorstr='#ece0d1',GradientType=1 ); /* ie6-9 */
+  padding: 50px 0;
+}
+.header {
+  margin-bottom: 30px;
+}
+.container{color: @greyMedium;
+  .content-wrapper { background: white; .border-radius (8px); }
+}
+
+.app-trans-search(@color, @bgColor, @minHeight, @borderColor) { 
+  .navbar-form {margin: 0; background: @oceanGreen; padding: 20px 15px; border-top-left-radius: 8px;
+    .input-group{border-bottom: 2px solid @borderColor;}
+  }
+  input.form-control, button.btn {border:none; background: transparent; box-shadow: none; .mixin-set-color(@color);}
+}
+
+.app-brand-row {
+  > div {padding: 20px 15px; min-height: @appTopRowMinHeight;
+    &:first-child {padding-top: 0; padding-bottom: 0;}
+    .app-trans-search {
+      .app-trans-search(white, @oceanGreen, @appTopRowMinHeight, white);
+    }
+    a {display:inline-block; line-height: 28px; color: @greyDark; 
+      &.city {color: @greyMedium;}
+    }
+    .navbar-brand {float: none; width: 98px; height: 28px; background: url("../images/wayflaring-logo.gif") center no-repeat; display: inline-block; padding: 0;}
+  }
+}
+
+.navbar { .border-radius(0);
+  &.navbar-inverse {background: @navBarBg; margin-bottom: 0;
+    .container-fluid {padding: 0;}
+    .navbar-collapse { padding: 0; }
+    .navbar-nav { min-height: @navBarMinHeight;
+      > li {min-height: @navBarMinHeight; 
+        &.active {background: black;}
+        a {padding: 25px 32px; text-align: center;
+          .glyphicon-class {display: block;}
+          .glyphicon-envelope{
+            margin-left: 14px;
+          }
+          .badge {background: @badgeBg; color: white; margin: -38px 0px 0 -10px;}
+        }
+      }
+    }
+  }
+}
+
+.main-content-wrapper {
+  .content-column {
+    .carousel{
+      .carousel-caption { font-family: 'source_sans_prolight'; text-transform: capitalize; padding: 0; left: 5%; text-align: left;
+        h2{}
+        .longitudes:after {
+          content: "\00b0";
+        }
+      }
+      .carousel-control-wrapper {
+        position: absolute; right: 10px; bottom: 10px; width: 38px; height: 32px; padding: 5px; background: black; .border-radius (4px);
+        .carousel-control {width: auto; display: inline-block; line-height: 26px; position: static; font-size: 12px;}
+      }
+    }
+    .content-blocks-wrapper {padding: 30px;
+    .content-block {border: 2px solid #edf1f2; padding: 0; .border-radius (6px);
+      .thumbnail {padding: 0; border: none; margin: 0;
+        img {
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
+      }
+      .user-details { margin-top: -40px; margin-bottom: 20px;
+        .user-img { width:80px; height: 80px; border-radius: 50%; border: 2px solid white; margin: 0 auto;
+          img{border-radius: 50%;}
+        }
+        .user-name, .time, .location { line-height: 40px; font-size: 16px;}
+        .user-name {color: white}
+        .time, .location {color: @greyLightest; font-size: 14px;}
+      }
+      p {padding: 0 20px; color: @greyMedium;}
+      .post-actions { background: #edf1f2; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;
+        .btn-link {color: @greyLightest;}
+      }
+    }
+  }
+  }
+  .activity-column { background: @activityColBg; padding: 15px;
+    h3 {text-transform: uppercase; font-size: 14px; color: #a5b1b8;}
+    .media-list {
+      .media {
+        .media-body {font-size: 12px;
+          h4 {font-size: 14px; margin: 0;}
+          .glyphicon{margin-top: -8px;}
+        }
+        &.active {
+          .glyphicon{color: @userActiveColor;}
+        }
+        &.idle {
+          .glyphicon{color: @userIdleColor;}
+        }
+        &.offline {
+          .glyphicon{color: @userOfflineColor;}
+        }
+      }
+    }
+
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 0;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
